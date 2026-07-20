@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--
+  ============================================================
+  ✏️  自己修改指南（用 Ctrl+F 搜下面的关键字快速跳转）
+  ============================================================
+  【可改-封面大图】   首页大背景照片
+  【可改-信封照片】   开场信封上的圆形合照
+  【可改-头像】       新郎/新娘头像照片
+  【可改-日期】       婚礼日期
+  【可改-时间】       婚礼时间
+  【可改-地点】       酒楼名称 / 地图链接
+  【可改-流程】       当日流程（签到、开席时间与项目）
+  【可改-倒计时日期】 倒计时 & 内部用的婚礼日期时间
+  【可改-相册照片】   「我们的瞬间」槟城 / 北京相册照片清单
+  ------------------------------------------------------------
+  改照片：把文件名换成 WeddingPhoto-web/ 或 BeijingWeddingPhoto-web/ 里已有的图片名即可
+  改完保存后，记得把 index.html 重新上传到 GitHub 覆盖旧的，网站才会更新
+  ============================================================
+-->
+<title>洪诗铭 & 林程嫱 · 婚礼邀请函</title>
+<meta name="description" content="2026年10月31日（星期六）· 晚宴 · 诚挚邀请您见证我们的幸福时刻" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bengas0711-design.github.io/weddingInvitation/" />
+<meta property="og:title" content="洪诗铭 & 林程嫱 · 婚礼邀请函" />
+<meta property="og:description" content="2026年10月31日（星期六）· 晚宴 · 诚挚邀请您见证我们的幸福时刻" />
+<meta property="og:image" content="https://bengas0711-design.github.io/weddingInvitation/WeddingPhoto-web/0T1A3097TU.jpg" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="1067" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --rose-deep: #a85d57;
+    --rose: #cf877f;
+    --blush: #e7b3ac;
+    --blush-pale: #f3d9d3;
+    --milk: #c9a9cf;
+    --milk-deep: #9a6f9e;
+    --cream: #fbf5f4;
+    --cream-2: #f4ebee;
+    --ink: #5a4a55;
+    --muted: #9a828c;
+    --white: #ffffff;
+    --gold: #9a6f9e;
+    --plum: #7e4f86;
+    --plum-soft: #b58fc0;
+    --shadow: 0 20px 55px rgba(126, 79, 134, 0.16);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Serif SC", serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+  .serif-en { font-family: "Cormorant Garamond", serif; }
+  section { padding: 92px 24px; position: relative; }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ===== Cover ===== */
+  .cover {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 24px; position: relative; overflow: hidden;
+    /* 【可改-封面大图】首页大背景照片：改下面那行 url('...') 里的文件名即可 */
+    background:
+      radial-gradient(circle at 18% 16%, rgba(174, 216, 225, 0.42), transparent 46%),
+      radial-gradient(circle at 82% 82%, rgba(243, 197, 208, 0.40), transparent 46%),
+      linear-gradient(180deg, rgba(245,250,251,0.42) 0%, rgba(220,238,242,0.55) 55%, rgba(220,238,242,0.92) 100%),
+      url('WeddingPhoto-web/926A5189b.jpg') center 22%/cover no-repeat;
+  }
+  .cover .frame {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 28px;
+    padding: 64px 38px;
+    max-width: 560px; width: 100%;
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    box-shadow: var(--shadow);
+  }
+  .cover .kicker {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 6px; text-transform: uppercase;
+    color: var(--rose); font-size: 14px; margin-bottom: 26px;
+  }
+  .cover .names {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(42px, 10.5vw, 80px);
+    font-weight: 500; line-height: 1.12; margin: 10px 0;
+    color: var(--rose-deep);
+  }
+  .cover .amp { display: block; font-style: italic; color: var(--milk); font-size: 0.55em; margin: 4px 0; }
+  .cover .date { margin-top: 28px; letter-spacing: 3px; color: var(--muted); font-size: 15px; }
+
+  .heart-divider { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 24px 0; color: var(--blush); }
+  .heart-divider::before, .heart-divider::after { content: ""; height: 1px; width: 56px; background: var(--blush); }
+
+  .scroll-hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: var(--rose); font-size: 12px; letter-spacing: 3px; animation: bob 2s infinite; }
+  @keyframes bob { 0%,100%{transform:translate(-50%,0);} 50%{transform:translate(-50%,8px);} }
+
+  /* falling petals */
+  .petal { position: fixed; top: -30px; z-index: 1; color: var(--blush); font-size: 16px; pointer-events: none; opacity: .8; animation: fall linear infinite; }
+  @keyframes fall {
+    0% { transform: translateY(-30px) rotate(0deg); opacity: 0; }
+    10% { opacity: .85; }
+    100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ===== Section heading ===== */
+  .sec-head { text-align: center; margin-bottom: 46px; }
+  .sec-head .label { font-family: "Cormorant Garamond", serif; letter-spacing: 5px; text-transform: uppercase; color: var(--plum); font-size: 13px; }
+  .sec-head h2 { font-weight: 500; font-size: clamp(26px, 6vw, 34px); color: var(--rose-deep); margin-top: 8px; }
+  .sec-head .label::before, .sec-head .label::after { content: "❀"; margin: 0 10px; color: var(--plum-soft); }
+
+  /* ===== Intro ===== */
+  .intro { background: var(--cream); text-align: center; }
+  .intro p { color: var(--muted); font-weight: 300; max-width: 600px; margin: 0 auto; }
+  .couple { display: flex; gap: 28px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
+  .person { flex: 1 1 220px; max-width: 260px; }
+  .person .avatar {
+    width: 156px; height: 156px; border-radius: 50%; margin: 0 auto 18px;
+    background: linear-gradient(135deg, var(--blush-pale), var(--milk));
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-size: 46px; font-weight: 500;
+    box-shadow: var(--shadow); border: 4px solid var(--white);
+    /* ▼▼▼ 头像照片：在下方 HTML 的 style 里改 url(...) ▼▼▼ */
+  }
+  .person h3 { font-size: 23px; color: var(--rose-deep); font-weight: 500; }
+  .person .role { color: var(--rose); font-size: 13px; letter-spacing: 2px; }
+  .person p { font-size: 14px; margin-top: 8px; color: var(--muted); }
+
+  /* ===== Countdown ===== */
+  .countdown { background: linear-gradient(160deg, var(--rose) 0%, var(--plum) 100%); color: var(--white); }
+  .countdown .sec-head h2, .countdown .sec-head .label { color: #fff; }
+  .countdown .sec-head .label::before, .countdown .sec-head .label::after { color: var(--blush-pale); }
+  .cd-grid { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+  .cd-cell { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); border-radius: 18px; padding: 22px 10px; min-width: 92px; }
+  .cd-cell .num { font-family: "Cormorant Garamond", serif; font-size: 46px; line-height: 1; display: block; }
+  .cd-cell .unit { font-size: 13px; letter-spacing: 2px; color: var(--blush-pale); margin-top: 8px; }
+
+  /* ===== Details ===== */
+  .details { background: var(--white); }
+  .detail-cards { display: grid; gap: 22px; }
+  .card {
+    border: 1px solid var(--blush-pale); border-radius: 20px; padding: 32px; text-align: center;
+    background: var(--cream); transition: transform .4s ease, box-shadow .4s ease;
+  }
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+  .card .icon { font-size: 30px; }
+  .card h3 { color: var(--rose-deep); font-weight: 500; margin: 12px 0 6px; font-size: 20px; }
+  .card .big { font-family: "Cormorant Garamond", serif; font-size: 26px; color: var(--rose); }
+  .card p { color: var(--muted); font-size: 15px; }
+  .card a { color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--blush); }
+
+  /* ===== Timeline ===== */
+  .schedule { background: var(--cream-2); }
+  .timeline { position: relative; max-width: 520px; margin: 0 auto; }
+  .timeline::before { content: ""; position: absolute; left: 18px; top: 6px; bottom: 6px; width: 2px; background: var(--blush); }
+  .tl-item { position: relative; padding: 0 0 34px 56px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item .dot { position: absolute; left: 10px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--white); border: 3px solid var(--rose); }
+  .tl-item .time { font-family: "Cormorant Garamond", serif; color: var(--rose); font-size: 20px; }
+  .tl-item h4 { color: var(--rose-deep); font-weight: 500; font-size: 17px; }
+  .tl-item p { color: var(--muted); font-size: 14px; }
+
+  /* ===== Gallery ===== */
+  .gallery { background: var(--white); }
+  .gal-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; }
+  .gal-tab { border: 1px solid var(--blush); background: transparent; color: var(--rose); padding: 9px 22px; border-radius: 30px; cursor: pointer; font-family: "Noto Serif SC", serif; font-size: 14px; letter-spacing: 2px; transition: all .3s ease; }
+  .gal-tab.active { background: var(--rose); color: var(--white); border-color: var(--rose); }
+  .gal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .gal-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; cursor: pointer; background: var(--blush-pale); transition: transform .4s ease, filter .4s ease; }
+  .gal-grid img:hover { transform: scale(1.03); filter: brightness(1.05); }
+
+  /* ===== Lightbox ===== */
+  .lightbox { position: fixed; inset: 0; z-index: 90; background: rgba(60, 38, 35, 0.92); display: none; align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+  .lightbox .lb-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.16); color: #fff; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 24px; cursor: pointer; }
+  .lightbox .lb-prev { left: 16px; }
+  .lightbox .lb-next { right: 16px; }
+  .lightbox .lb-close { top: 20px; right: 20px; transform: none; }
+
+  /* ===== Music button ===== */
+  .music-btn { position: fixed; bottom: 22px; right: 22px; z-index: 80; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; background: var(--rose-deep); color: var(--blush-pale); border: none; font-size: 22px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; }
+  .music-btn.playing { animation: spin 6s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ===== RSVP ===== */
+  .rsvp { background: linear-gradient(160deg, var(--rose) 0%, var(--plum) 100%); color: var(--white); }
+  .rsvp .sec-head h2, .rsvp .sec-head .label { color: #fff; }
+  .rsvp .sec-head .label::before, .rsvp .sec-head .label::after { color: var(--cream); }
+  .rsvp p.lead { text-align: center; color: var(--cream); margin-bottom: 30px; font-weight: 300; }
+  form { max-width: 460px; margin: 0 auto; display: grid; gap: 16px; }
+  .rsvp form { text-align: left; }
+  .field label { display: block; font-size: 13px; letter-spacing: 1px; margin-bottom: 6px; color: var(--cream); }
+  .field input, .field select, .field textarea { width: 100%; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.4); border-radius: 12px; background: rgba(255,255,255,0.14); color: var(--white); font-family: inherit; font-size: 15px; }
+  .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.6); }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #fff; }
+  .field select option { color: var(--ink); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  button.submit { margin-top: 8px; padding: 14px; background: var(--white); color: var(--milk-deep); border: none; border-radius: 30px; cursor: pointer; font-family: "Noto Serif SC", serif; font-size: 16px; letter-spacing: 2px; transition: transform .3s ease; }
+  button.submit:hover { transform: translateY(-2px); }
+  .form-note { text-align: center; color: #fff; font-size: 14px; margin-top: 14px; min-height: 20px; }
+
+  /* ===== Message wall ===== */
+  .wall { background: var(--cream); }
+  .wall-form { max-width: 560px; margin: 0 auto 40px; display: grid; gap: 12px; }
+  .wall-form .row2 { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; }
+  .wall-form input { width: 100%; padding: 12px 14px; border: 1px solid var(--blush-pale); border-radius: 12px; background: var(--white); color: var(--ink); font-family: inherit; font-size: 15px; }
+  .wall-form input:focus { outline: none; border-color: var(--rose); }
+  .wall-form button { padding: 12px; background: var(--rose); color: var(--white); border: none; border-radius: 30px; cursor: pointer; font-family: inherit; font-size: 15px; letter-spacing: 2px; transition: background .3s ease; }
+  .wall-form button:hover { background: var(--rose-deep); }
+  .wall-list { display: grid; gap: 14px; max-width: 620px; margin: 0 auto; }
+  .msg { background: var(--white); border: 1px solid var(--blush-pale); border-radius: 16px; padding: 16px 18px; position: relative; box-shadow: 0 6px 18px rgba(168,93,87,0.06); }
+  .msg .who { color: var(--rose-deep); font-weight: 500; }
+  .msg .when { color: var(--blush); font-size: 12px; float: right; }
+  .msg .text { color: var(--muted); margin-top: 4px; font-weight: 300; }
+  .wall-empty { text-align: center; color: var(--muted); font-weight: 300; }
+
+  /* ===== Footer ===== */
+  footer { background: var(--cream-2); text-align: center; padding: 72px 24px; }
+  footer .thanks { font-family: "Cormorant Garamond", serif; font-size: clamp(30px, 8vw, 52px); color: var(--rose-deep); }
+  footer .names-sm { color: var(--rose); letter-spacing: 3px; margin-top: 14px; }
+  footer .copy { color: var(--muted); font-size: 12px; margin-top: 26px; }
+
+  @media (max-width: 520px) {
+    section { padding: 72px 20px; }
+    .cover .frame { padding: 46px 24px; }
+    .row { grid-template-columns: 1fr; }
+    .gal-grid { grid-template-columns: repeat(2, 1fr); }
+    .wall-form .row2 { grid-template-columns: 1fr; }
+    .wave-top svg, .wave-bottom svg { height: 30px; }
+  }
+
+  /* ===== 美化增强（v3.1 海岛风格包） ===== */
+  /* 海浪分隔线 */
+  .wave-top, .wave-bottom { position: absolute; left: 0; width: 100%; line-height: 0; z-index: 3; pointer-events: none; }
+  .wave-top { top: -1px; }
+  .wave-bottom { bottom: -1px; }
+  .wave-top svg, .wave-bottom svg { display: block; width: 100%; height: 46px; }
+
+  /* 滚动进度条 */
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 210;
+    background: linear-gradient(90deg, var(--rose), var(--milk)); transition: width .12s ease; }
+
+  /* 开场信封 */
+  body.locked { overflow: hidden; }
+  .intro-cover {
+    position: fixed; inset: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    background:
+      radial-gradient(circle at 50% 28%, rgba(169,210,221,0.5), transparent 60%),
+      linear-gradient(160deg, var(--cream) 0%, var(--cream-2) 100%);
+    transition: opacity .8s ease, visibility .8s ease;
+  }
+  .intro-cover.hide { opacity: 0; visibility: hidden; }
+  .envelope { padding: 24px; animation: floatUp 1s ease both; }
+  @keyframes floatUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  .env-card {
+    background: rgba(255,255,255,0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    border: 1px solid var(--blush); border-radius: 24px; text-align: center;
+    padding: 54px 40px; max-width: 440px; box-shadow: var(--shadow);
+  }
+  .env-seal {
+    width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 22px;
+    /* 【可改-信封照片】开场信封上的圆形合照：改下面 url('...') 里的文件名 */
+    background-image: url('WeddingPhoto-web/926A5120.jpg');
+    background-size: cover; background-position: center 30%;
+    border: 4px solid #fff;
+    box-shadow: var(--shadow);
+  }
+  .env-kicker { font-family: "Cormorant Garamond", serif; letter-spacing: 5px; text-transform: uppercase; color: var(--plum); font-size: 13px; }
+  .env-names { font-family: "Cormorant Garamond", serif; font-size: clamp(34px, 9vw, 52px); color: var(--rose-deep); margin: 10px 0 6px; line-height: 1.1; }
+  .env-sub { color: var(--muted); font-weight: 300; margin-bottom: 28px; }
+  .env-open {
+    padding: 13px 34px; border: none; border-radius: 30px; cursor: pointer;
+    background: linear-gradient(135deg, var(--rose), var(--plum)); color: #fff;
+    font-family: "Noto Serif SC", serif; font-size: 15px; letter-spacing: 3px;
+    box-shadow: 0 10px 24px rgba(126,79,134,0.32); transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .env-open:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(126,79,134,0.42); }
+
+  /* 画廊与按钮光泽 */
+  .gal-grid img { box-shadow: 0 6px 16px rgba(47,107,125,0.08); }
+  button.submit, .wall-form button, .env-open { position: relative; overflow: hidden; }
+  button.submit::after, .wall-form button::after, .env-open::after {
+    content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+    transform: skewX(-20deg); pointer-events: none;
+  }
+  button.submit:hover::after, .wall-form button:hover::after, .env-open:hover::after { animation: sheen .8s ease; }
+  @keyframes sheen { to { left: 130%; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===================== 开场信封 ===================== -->
+<div class="intro-cover" id="introCover">
+  <div class="envelope">
+    <div class="env-card">
+      <div class="env-seal" role="img" aria-label="新人合照"></div>
+      <div class="env-kicker">Wedding Invitation</div>
+      <div class="env-names serif-en">See Beng<br>&amp; Stepheny</div>
+      <div class="env-sub">诚挚邀请您见证我们的幸福时刻</div>
+      <button class="env-open" id="envOpen">开启邀请函 ✦</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 封面 ===================== -->
+<header class="cover">
+  <div class="frame">
+    <div class="kicker">We Are Getting Married</div>
+    <div class="names serif-en">
+      See Beng
+      <span class="amp">&amp;</span>
+      Stepheny
+    </div>
+    <div class="heart-divider">≋</div>
+    <div class="date">2026 · 10 · 31　星期六</div>
+  </div>
+  <div class="scroll-hint">向下滑动 ↓</div>
+</header>
+
+<!-- ===================== 介绍 ===================== -->
+<section class="intro">
+  <div class="container reveal">
+    <div class="sec-head">
+      <div class="label">Our Story</div>
+      <h2>我们要结婚啦</h2>
+    </div>
+    <p>感谢生命中与你相遇。<br>在最好的时光里，我们决定携手走向未来。<br>诚挚地邀请您见证我们爱的承诺。</p>
+    <div class="couple">
+      <div class="person">
+        <!-- 【可改-头像】新郎头像：改 url('...') 里的文件名 -->
+        <div class="avatar" style="background-image:url('WeddingPhoto-web/0T1A3128b.jpg'); background-position:center 20%;"></div>
+        <h3>洪诗铭</h3>
+        <div class="role">THE GROOM 新郎</div>
+        <p>愿做你最坚实的依靠。</p>
+      </div>
+      <div class="person">
+        <!-- 【可改-头像】新娘头像：改 url('...') 里的文件名 -->
+        <div class="avatar" style="background-image:url('WeddingPhoto-web/0T1A3125.jpg'); background-position:center 20%;"></div>
+        <h3>林程嫱</h3>
+        <div class="role">THE BRIDE 新娘</div>
+        <p>愿与你共度每个春秋。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 倒计时 ===================== -->
+<section class="countdown">
+  <div class="wave-top" aria-hidden="true"><svg viewBox="0 0 1200 48" preserveAspectRatio="none"><path d="M0,24 C150,2 350,46 600,24 C850,2 1050,46 1200,24 L1200,0 L0,0 Z" fill="#f8fbfc"/></svg></div>
+  <div class="container reveal">
+    <div class="sec-head">
+      <div class="label">Countdown</div>
+      <h2>距离婚礼还有</h2>
+    </div>
+    <div class="cd-grid" id="countdown">
+      <div class="cd-cell"><span class="num" id="cd-days">--</span><div class="unit">天</div></div>
+      <div class="cd-cell"><span class="num" id="cd-hours">--</span><div class="unit">时</div></div>
+      <div class="cd-cell"><span class="num" id="cd-mins">--</span><div class="unit">分</div></div>
+      <div class="cd-cell"><span class="num" id="cd-secs">--</span><div class="unit">秒</div></div>
+    </div>
+  </div>
+  <div class="wave-bottom" aria-hidden="true"><svg viewBox="0 0 1200 48" preserveAspectRatio="none"><path d="M0,24 C150,46 350,2 600,24 C850,46 1050,2 1200,24 L1200,48 L0,48 Z" fill="#ffffff"/></svg></div>
+</section>
+
+<!-- ===================== 婚礼信息 ===================== -->
+<section class="details">
+  <div class="container reveal">
+    <div class="sec-head">
+      <div class="label">The Details</div>
+      <h2>婚礼信息</h2>
+    </div>
+    <div class="detail-cards">
+      <div class="card">
+        <div class="icon">📅</div>
+        <h3>日期</h3>
+        <!-- 【可改-日期】婚礼日期（改这两行文字；如改日期记得也改下面【可改-倒计时日期】） -->
+        <div class="big">2026年10月31日</div>
+        <p>星期六</p>
+      </div>
+      <div class="card">
+        <div class="icon">⏰</div>
+        <h3>时间</h3>
+        <!-- 【可改-时间】婚礼时间 -->
+        <div class="big">晚上 7:00 开始</div>
+        <p>敬备晚宴，恭候光临</p>
+      </div>
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>地点</h3>
+        <!-- 【可改-地点】酒楼名称 / 地图链接（改下面文字与 a 标签的 href 网址） -->
+        <div class="big" style="font-size:22px;">新娘家</div>
+        <p>Laguna Merbok · 双溪大年 · 吉打</p>
+        <p><a href="https://maps.app.goo.gl/aGq3g41DUfGe2YPe9" target="_blank" rel="noopener">查看地图导航 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 流程 ===================== -->
+<section class="schedule">
+  <div class="container reveal">
+    <div class="sec-head">
+      <div class="label">Schedule</div>
+      <h2>当日流程</h2>
+      <p class="sec-note" style="color:var(--muted);font-weight:300;margin-top:8px;">温馨留厅夜 · 欢迎亲友共聚</p>
+    </div>
+    <div class="timeline">
+      <!-- 【可改-流程】当日流程：每行一个项目；可改时间/名称，或复制一行新增 -->
+      <div class="tl-item"><div class="dot"></div><div class="time">6:30 PM</div><h4>宾客签到</h4><p>恭候您的到来，签到留念</p></div>
+      <div class="tl-item"><div class="dot"></div><div class="time">7:00 PM</div><h4>留厅夜开始</h4><p>欢聚一堂，共享喜悦</p></div>
+      <!-- 流程结束 -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 相册 ===================== -->
+<section class="gallery">
+  <div class="container reveal">
+    <div class="sec-head">
+      <div class="label">Gallery</div>
+      <h2>我们的瞬间</h2>
+    </div>
+    <div class="gal-tabs">
+      <button class="gal-tab active" data-album="penang">槟城</button>
+      <button class="gal-tab" data-album="beijing">北京</button>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== 回执 RSVP ===================== -->
+<section class="rsvp">
+  <div class="wave-top" aria-hidden="true"><svg viewBox="0 0 1200 48" preserveAspectRatio="none"><path d="M0,24 C150,2 350,46 600,24 C850,2 1050,46 1200,24 L1200,0 L0,0 Z" fill="#ffffff"/></svg></div>
+  <div class="container reveal">
+    <div class="sec-head">
+      <div class="label">R.S.V.P</div>
+      <h2>诚邀回执</h2>
+    </div>
+    <p class="lead">期待您的莅临，请于 8 月 31 日前填写以下回执。</p>
+    <!-- 已接入 Google 表单（人数确定） -->
+    <form id="rsvpForm"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSeOqbhK7Xme3aCk5RBuBBWszwVcF-56mqOOzqX19XSGde_dLg/formResponse"
+          method="POST" target="hidden_iframe">
+      <div class="field">
+        <label>您的姓名</label>
+        <input type="text" name="entry.1361193740" placeholder="请输入姓名" required />
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>联系电话</label>
+          <input type="tel" name="entry.574953986" placeholder="手机号码" required />
+        </div>
+        <div class="field">
+          <label>电子邮箱（选填）</label>
+          <input type="email" name="entry.1049192339" placeholder="name@email.com" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>是否出席</label>
+          <select name="entry.1285303325" id="rsvpAttend" required>
+            <option value="">请选择</option>
+            <option value="很高兴出席">很高兴出席</option>
+            <option value="很遗憾缺席">很遗憾缺席</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>出席人数（含本人，缺席填 0）</label>
+          <input type="number" name="entry.1398886204" id="rsvpNum" min="0" max="20" step="1" placeholder="请填写具体人数" required />
+        </div>
+      </div>
+      <button type="submit" class="submit">提交回执</button>
+      <div class="form-note" id="formNote"></div>
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  </div>
+  <div class="wave-bottom" aria-hidden="true"><svg viewBox="0 0 1200 48" preserveAspectRatio="none"><path d="M0,24 C150,46 350,2 600,24 C850,46 1050,2 1200,24 L1200,48 L0,48 Z" fill="#f8fbfc"/></svg></div>
+</section>
+
+<!-- ===================== 嘉宾留言墙 ===================== -->
+<section class="wall">
+  <div class="container reveal">
+    <div class="sec-head">
+      <div class="label">Guest Book</div>
+      <h2>嘉宾留言墙</h2>
+    </div>
+    <form class="wall-form" id="wallForm">
+      <div class="row2">
+        <input type="text" id="wallName" placeholder="你的名字" maxlength="20" required />
+        <input type="text" id="wallText" placeholder="留下一句祝福……" maxlength="120" required />
+      </div>
+      <button type="submit">写下祝福</button>
+    </form>
+    <div class="wall-list" id="wallList"></div>
+  </div>
+</section>
+
+<!-- ===================== 页脚 ===================== -->
+<footer>
+  <div class="reveal">
+    <div class="thanks serif-en">Thank You</div>
+    <div class="names-sm">洪诗铭 &amp; 林程嫱　敬邀</div>
+    <div class="copy">© 2026 With Love<br><span style="font-size:11px;opacity:.7;">Music: “Touching Moments” · Kevin MacLeod · CC BY 4.0</span></div>
+  </div>
+</footer>
+
+<!-- ===================== 背景音乐 / 灯箱 ===================== -->
+<audio id="bgm" loop preload="none" src="music/bgm.mp3"></audio>
+<button class="music-btn" id="musicBtn" title="播放/暂停音乐">♪</button>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-btn lb-close" id="lbClose">×</button>
+  <button class="lb-btn lb-prev" id="lbPrev">‹</button>
+  <img id="lbImg" alt="婚纱照" />
+  <button class="lb-btn lb-next" id="lbNext">›</button>
+</div>
+
+<script>
+  // 【可改-倒计时日期】婚礼日期时间（月份要减1：10=11月）。倒计时和封面年份都用它
+  const WEDDING_DATE = new Date(2026, 9, 31, 19, 0, 0); // 2026-10-31 19:00（周六晚上7点）
+
+  const CONFIG = {
+    // 留言墙后端地址：填 Google Apps Script 的 /exec 网址（留空则仅本地演示）
+    WALL_ENDPOINT: "https://script.google.com/macros/s/AKfycbw6XXYjw3VKEbBKZSleL4bTe6DdzpAvuXBxOk4IClWoB3LznyWN1eRq2FQpM_emQlOU/exec"
+  };
+
+  // 【可改-相册照片】「我们的瞬间」相册：penang=槟城，beijing=北京
+  // 只要把 files 里的文件名换成对应文件夹里已有的图片名即可（用半角逗号 , 和引号 ""）
+  const ALBUMS = {
+    penang: {
+      dir: "WeddingPhoto-web/",
+      files: ["0T1A3107b.jpg","0T1A3131.jpg","926A5125b.jpg","926A5127b.jpg","926A5149b.jpg","926A5183.jpg"]
+    },
+    beijing: {
+      dir: "BeijingWeddingPhoto-web/",
+      files: ["1A0A3814.jpg","1A0A3848.jpg","1A0A3866.jpg","1A0A3790.jpg","1A0A3801.jpg","1A0A3808.jpg"]
+    }
+  };
+
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick() {
+    const now = new Date();
+    let diff = Math.max(0, WEDDING_DATE - now);
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000);  diff -= h * 3600000;
+    const m = Math.floor(diff / 60000);    diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+    document.getElementById("cd-days").textContent = d;
+    document.getElementById("cd-hours").textContent = pad(h);
+    document.getElementById("cd-mins").textContent = pad(m);
+    document.getElementById("cd-secs").textContent = pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // 滚动渐显
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // 飘落花瓣
+  (function petals() {
+    const chars = ["❀", "✺", "✿", "≋"];
+    for (let i = 0; i < 12; i++) {
+      const s = document.createElement("span");
+      s.className = "petal";
+      s.textContent = chars[i % chars.length];
+      s.style.left = Math.random() * 100 + "vw";
+      s.style.fontSize = (12 + Math.random() * 12) + "px";
+      s.style.animationDuration = (8 + Math.random() * 8) + "s";
+      s.style.animationDelay = (Math.random() * 8) + "s";
+      document.body.appendChild(s);
+    }
+  })();
+
+  // 相册渲染 + 灯箱
+  const galGrid = document.getElementById("galGrid");
+  let currentList = [];
+  function renderAlbum(key) {
+    const al = ALBUMS[key];
+    currentList = al.files.map((f) => al.dir + f);
+    galGrid.innerHTML = "";
+    currentList.forEach((src, i) => {
+      const img = document.createElement("img");
+      img.src = src; img.loading = "lazy"; img.alt = "婚纱照";
+      img.addEventListener("click", () => openLightbox(i));
+      galGrid.appendChild(img);
+    });
+  }
+  document.querySelectorAll(".gal-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".gal-tab").forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      renderAlbum(tab.dataset.album);
+    });
+  });
+  renderAlbum("penang");
+
+  const lightbox = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  let lbIndex = 0;
+  function openLightbox(i) { lbIndex = i; lbImg.src = currentList[i]; lightbox.classList.add("open"); }
+  function closeLightbox() { lightbox.classList.remove("open"); }
+  function step(d) { lbIndex = (lbIndex + d + currentList.length) % currentList.length; lbImg.src = currentList[lbIndex]; }
+  document.getElementById("lbClose").addEventListener("click", closeLightbox);
+  document.getElementById("lbPrev").addEventListener("click", () => step(-1));
+  document.getElementById("lbNext").addEventListener("click", () => step(1));
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") step(-1);
+    if (e.key === "ArrowRight") step(1);
+  });
+
+  // 背景音乐
+  const bgm = document.getElementById("bgm");
+  const musicBtn = document.getElementById("musicBtn");
+  musicBtn.addEventListener("click", () => {
+    if (bgm.paused) {
+      bgm.play().then(() => musicBtn.classList.add("playing"))
+        .catch(() => { musicBtn.textContent = "✕"; setTimeout(() => musicBtn.textContent = "♪", 1500); });
+    } else { bgm.pause(); musicBtn.classList.remove("playing"); }
+  });
+
+  // 回执 RSVP（直连 Google 表单）
+  const rsvpForm = document.getElementById("rsvpForm");
+  if (rsvpForm) {
+    rsvpForm.addEventListener("submit", function () {
+      const note = document.getElementById("formNote");
+      const name = (this.querySelector('input[type="text"]').value || "").trim();
+      note.textContent = name ? `谢谢你，${name}！我们已收到你的回执 💕` : "已提交，谢谢你 💕";
+      setTimeout(() => this.reset(), 300);
+    });
+    // 出席：人数至少 1；缺席：人数自动填 0
+    const attendSel = document.getElementById("rsvpAttend");
+    const numInput = document.getElementById("rsvpNum");
+    if (attendSel && numInput) {
+      attendSel.addEventListener("change", () => {
+        if (attendSel.value === "很遗憾缺席") {
+          numInput.min = "0";
+          numInput.value = "0";
+        } else if (attendSel.value === "很高兴出席") {
+          numInput.min = "1";
+          if (numInput.value === "0") { numInput.value = ""; }
+        }
+      });
+    }
+  }
+
+  // 嘉宾留言墙
+  const wallList = document.getElementById("wallList");
+  const wallForm = document.getElementById("wallForm");
+  const SEED = [
+    { name: "小美", text: "祝百年好合，永结同心！", when: "" },
+    { name: "阿杰", text: "新婚快乐，早生贵子～", when: "" }
+  ];
+  function fmt(ts) {
+    if (!ts) return "";
+    const d = new Date(ts);
+    return `${d.getMonth() + 1}月${d.getDate()}日 ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  }
+  function paint(msgs) {
+    if (!msgs.length) { wallList.innerHTML = '<p class="wall-empty">还没有留言，快来写下第一句祝福吧～</p>'; return; }
+    wallList.innerHTML = msgs.map((m) =>
+      `<div class="msg"><span class="when">${fmt(m.when)}</span><div class="who">${esc(m.name)}</div><div class="text">${esc(m.text)}</div></div>`
+    ).join("");
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+  function localMsgs() {
+    try { return JSON.parse(localStorage.getItem("weddingWall") || "null") || SEED.slice(); }
+    catch { return SEED.slice(); }
+  }
+  function loadWall() {
+    if (CONFIG.WALL_ENDPOINT) {
+      fetch(CONFIG.WALL_ENDPOINT)
+        .then((r) => r.json())
+        .then((arr) => paint(Array.isArray(arr) ? arr.reverse() : []))
+        .catch(() => paint(localMsgs().slice().reverse()));
+    } else {
+      paint(localMsgs().slice().reverse());
+    }
+  }
+  wallForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("wallName").value.trim();
+    const text = document.getElementById("wallText").value.trim();
+    if (!name || !text) return;
+    const entry = { type: "wall", name, text, when: Date.now() };
+    const btn = this.querySelector("button");
+    if (CONFIG.WALL_ENDPOINT) {
+      btn.disabled = true;
+      const prev = btn.textContent;
+      btn.textContent = "发送中……";
+      fetch(CONFIG.WALL_ENDPOINT, { method: "POST", body: JSON.stringify(entry) })
+        .then(() => { this.reset(); btn.disabled = false; btn.textContent = prev; loadWall(); })
+        .catch(() => { this.reset(); btn.disabled = false; btn.textContent = prev; loadWall(); });
+    } else {
+      const all = localMsgs(); all.push(entry);
+      localStorage.setItem("weddingWall", JSON.stringify(all));
+      this.reset(); loadWall();
+    }
+  });
+  loadWall();
+
+  // 开场信封
+  document.body.classList.add("locked");
+  const introCover = document.getElementById("introCover");
+  document.getElementById("envOpen").addEventListener("click", () => {
+    introCover.classList.add("hide");
+    document.body.classList.remove("locked");
+    if (bgm) { bgm.play().then(() => musicBtn.classList.add("playing")).catch(() => {}); }
+    setTimeout(() => { introCover.style.display = "none"; }, 850);
+  });
+
+  // 滚动进度条
+  const sp = document.getElementById("scrollProgress");
+  window.addEventListener("scroll", () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    sp.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+  }, { passive: true });
+</script>
+</body>
+</html>
